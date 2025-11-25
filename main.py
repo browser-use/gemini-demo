@@ -43,45 +43,54 @@ async def inject_start_button_and_wait(page):
             // Create the button element
             const button = document.createElement('button');
             button.id = 'start-application-btn';
-            button.innerHTML = '▶️ Start Application';
+            button.innerHTML = 'FILL OUT APPLICATION';
 
-            // Style the button (floating top-right)
+            // Style the button (modern design with Inter font)
             button.style.cssText = `
                 position: fixed;
                 top: 20px;
                 right: 20px;
-                padding: 14px 28px;
-                background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-                color: white;
-                border: none;
-                border-radius: 8px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                white-space: nowrap;
+                height: 38px;
+                padding: 0 32px;
+                background: #fe750e;
+                color: black;
+                font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                border: 1px solid #fd8a3d;
+                border-radius: 0;
                 cursor: pointer;
                 z-index: 2147483647;
-                font-size: 16px;
-                font-weight: 600;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
-                transition: all 0.3s ease;
+                min-width: 180px;
+                transition: all 0.2s ease;
                 user-select: none;
+                box-shadow: none;
             `;
 
             // Add hover effect
             button.addEventListener('mouseenter', () => {
-                button.style.transform = 'translateY(-2px)';
-                button.style.boxShadow = '0 6px 16px rgba(76, 175, 80, 0.5)';
+                button.style.background = '#e66a0d';
+                button.style.boxShadow = '0 0 20px rgba(254, 117, 14, 0.4)';
             });
 
             button.addEventListener('mouseleave', () => {
-                button.style.transform = 'translateY(0)';
-                button.style.boxShadow = '0 4px 12px rgba(76, 175, 80, 0.4)';
+                button.style.background = '#fe750e';
+                button.style.boxShadow = 'none';
             });
 
             // Click handler - resolves Promise when clicked
             button.addEventListener('click', () => {
                 // Visual feedback
-                button.style.background = '#2e7d32';
-                button.innerHTML = '✓ Starting...';
-                button.style.cursor = 'default';
+                button.style.background = '#d55f0c';
+                button.style.opacity = '0.5';
+                button.style.pointerEvents = 'none';
+                button.innerHTML = 'STARTING...';
 
                 // Remove button after short delay
                 setTimeout(() => {
