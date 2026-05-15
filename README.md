@@ -89,3 +89,4 @@ Create a JSON file with your information:
 For issues specific to Browser-Use, see:
 - Documentation: [https://docs.browser-use.com](https://docs.browser-use.com)
 - GitHub: [https://github.com/browser-use/browser-use](https://github.com/browser-use/browser-use)
+- Browser Use Box: [https://browser-use.com/bux](https://browser-use.com/bux) for running Browser Use jobs from an always-on VPS or Telegram. [Watch the 15-second demo](https://www.tiktok.com/@browser_use/video/7639824093721758989).
